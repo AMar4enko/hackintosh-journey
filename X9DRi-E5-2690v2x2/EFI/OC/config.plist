@@ -28,7 +28,7 @@
 				<key>Comment</key>
 				<string></string>
 				<key>Enabled</key>
-				<true/>
+				<false/>
 				<key>Path</key>
 				<string>SSDT-PNLF.aml</string>
 			</dict>
@@ -36,7 +36,7 @@
 				<key>Comment</key>
 				<string></string>
 				<key>Enabled</key>
-				<true/>
+				<false/>
 				<key>Path</key>
 				<string>SSDT-HPET.aml</string>
 			</dict>
@@ -414,6 +414,22 @@
 				<key>PlistPath</key>
 				<string>Contents/Info.plist</string>
 			</dict>
+			<dict>
+				<key>BundlePath</key>
+				<string>HibernationFixup.kext</string>
+				<key>Comment</key>
+				<string></string>
+				<key>Enabled</key>
+				<true/>
+				<key>ExecutablePath</key>
+				<string>Contents/MacOS/HibernationFixup</string>
+				<key>MaxKernel</key>
+				<string></string>
+				<key>MinKernel</key>
+				<string></string>
+				<key>PlistPath</key>
+				<string>Contents/Info.plist</string>
+			</dict>
 		</array>
 		<key>Block</key>
 		<array>
@@ -529,9 +545,9 @@
 				<key>Comment</key>
 				<string>Fix CPU PM 1</string>
 				<key>Count</key>
-				<integer>0</integer>
+				<integer>1</integer>
 				<key>Enabled</key>
-				<true/>
+				<false/>
 				<key>Find</key>
 				<data>/w+EDwE=</data>
 				<key>Identifier</key>
@@ -557,9 +573,9 @@
 				<key>Comment</key>
 				<string>Fix CPU PM 2</string>
 				<key>Count</key>
-				<integer>0</integer>
+				<integer>1</integer>
 				<key>Enabled</key>
-				<true/>
+				<false/>
 				<key>Find</key>
 				<data>AQABD4Q=</data>
 				<key>Identifier</key>
@@ -585,9 +601,9 @@
 				<key>Comment</key>
 				<string>Fix CPU PM 3</string>
 				<key>Count</key>
-				<integer>0</integer>
+				<integer>1</integer>
 				<key>Enabled</key>
-				<true/>
+				<false/>
 				<key>Find</key>
 				<data>yXQUDzIl/w8AAGs=</data>
 				<key>Identifier</key>
@@ -613,9 +629,9 @@
 				<key>Comment</key>
 				<string>Fix CPU PM 4</string>
 				<key>Count</key>
-				<integer>0</integer>
+				<integer>1</integer>
 				<key>Enabled</key>
-				<true/>
+				<false/>
 				<key>Find</key>
 				<data>yXQFDzKD4B9CiUQ7</data>
 				<key>Identifier</key>
@@ -641,9 +657,9 @@
 				<key>Comment</key>
 				<string>Fix CPU PM 5</string>
 				<key>Count</key>
-				<integer>0</integer>
+				<integer>1</integer>
 				<key>Enabled</key>
-				<true/>
+				<false/>
 				<key>Find</key>
 				<data>AXRd</data>
 				<key>Identifier</key>
@@ -669,9 +685,9 @@
 				<key>Comment</key>
 				<string>Fix CPU PM 6</string>
 				<key>Count</key>
-				<integer>0</integer>
+				<integer>1</integer>
 				<key>Enabled</key>
-				<true/>
+				<false/>
 				<key>Find</key>
 				<data>4gAAAEiJ8A8w</data>
 				<key>Identifier</key>
@@ -697,9 +713,9 @@
 				<key>Comment</key>
 				<string>Fix CPU PM 7</string>
 				<key>Count</key>
-				<integer>0</integer>
+				<integer>1</integer>
 				<key>Enabled</key>
-				<true/>
+				<false/>
 				<key>Find</key>
 				<data>4gAAAA8w</data>
 				<key>Identifier</key>
@@ -729,21 +745,21 @@
 				<key>Enabled</key>
 				<true/>
 				<key>Find</key>
-				<data>jUPEPCI=</data>
+				<data>O34ugMPEgPtC</data>
 				<key>Identifier</key>
 				<string>kernel</string>
 				<key>Limit</key>
 				<integer>0</integer>
 				<key>Mask</key>
-				<data>//8A//8=</data>
+				<data></data>
 				<key>MaxKernel</key>
 				<string></string>
 				<key>MinKernel</key>
 				<string></string>
 				<key>Replace</key>
-				<data>jUPGPCI=</data>
+				<data>AH4ugMPBgPtC</data>
 				<key>ReplaceMask</key>
-				<data>AAD/AAA=</data>
+				<data></data>
 				<key>Skip</key>
 				<integer>0</integer>
 			</dict>
@@ -890,7 +906,7 @@
 				<key>SystemAudioVolume</key>
 				<data>Rg==</data>
 				<key>boot-args</key>
-				<string>-xcpm keepsyms=1 npci=0x2000</string>
+				<string>-xcpm_ipi keepsyms=1 npci=0x2000</string>
 				<key>csr-active-config</key>
 				<data>5wMAAA==</data>
 				<key>prev-lang:kbd</key>

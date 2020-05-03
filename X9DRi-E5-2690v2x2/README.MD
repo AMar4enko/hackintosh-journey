@@ -15,6 +15,8 @@ My new Catalina Hackintosh build, OpenCore 0.5.8:
 
 ## BIOS
 [version 3.3, patched to add boot from NVMe feature:](BIOS.zip)
+  - Advanced -> CPU Configuration
+    * Hyper Threading - Disdabled
   - Advanced -> Chipset Configuration -> North Bridge:  
     * Asus M.2 X16 card slot bifurcation set to x4
   - Advanced -> Chipset Configuration -> South Bridge:  
@@ -35,21 +37,14 @@ My new Catalina Hackintosh build, OpenCore 0.5.8:
 - VIA VL805/VL812 based ORICO USB 3.0 claimed to be supported natively, didn't function properly. GenericXHCI kext turned it into USB 2.0, replaced with Fresco-based one, works OOB
 - Intel Power Gadget doesn't work on dual-cpu builds
 
-## No solution yet
-### CPU power management 
-By all evedences system doesn't leverage full CPU performance.  
-Steps to get PM to work had been taken - created SSDT using Pike's script, patched xcpm bootstrap to support Ivy Bridge (this part appeared not to work) - below is an excerpt from OC boot log:
-```
-06:361 05:583 OC: Kernel patcher result 10 for kernel (_xcpm_bootstrap (Ivy Bridge) 10.15) - Not Found
-06:666 00:305 OC: Kernel patcher result 8 for com.apple.driver.AppleIntelCPUPowerManagement (Fix CPU PM 6) - Not Found
-```
+## CPU power management - solved
+Piker Alpha SSDT script SSDT was somehow corrupted, thus no plugin-type=1 patch done. Disabling Hyper Threading and recreating th SSDT fixed that. 
+No XCPM though, i seen reports of XCPM not working on Ivy Bridge after 10.15.4 update. 
 
-- [kextstat](kextstat.txt)
-- [AppleIntelInfo](AppleIntelInfo.MD)
 - `sysctl -n machdep.xcpm.vectors_loaded_count` - 0
 - `sysctl -n machdep.xcpm.mode` - 0
 
 
 ## Geekbench 4:
-  single CPU: ~2800  
+  single CPU: ~3100  
   multi CPU: ~3600
